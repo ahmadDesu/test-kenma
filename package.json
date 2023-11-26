@@ -9,19 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "@portabletext/react": "^3.0.11",
+    "@sanity/code-input": "^4.1.1",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.16.7",
+    "get-youtube-id": "^1.0.1",
+    "next": "13.5.4",
+    "next-sanity": "^5.5.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.4"
+    "react-lite-youtube-embed": "^2.3.52",
+    "react-refractor": "^2.1.7",
+    "react-router-dom": "^6.20.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "refractor": "^4.8.1",
+    "sanity": "^3.16.7",
+    "styled-components": "5.2"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-syntax-highlighter": "^15.5.9",
     "autoprefixer": "^10",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.4",
     "postcss": "^8",
     "tailwindcss": "^3",
-    "eslint": "^8",
-    "eslint-config-next": "13.5.4"
+    "typescript": "^5"
   }
 }

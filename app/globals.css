@@ -25,3 +25,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+p {
+  margin-bottom: 1em; /* Adjust as needed for spacing between paragraphs */
+  line-height: 1.5; /* Adjust as needed for line spacing */
+}
