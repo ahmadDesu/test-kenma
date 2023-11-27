@@ -27,7 +27,7 @@ function BlogData({ posts }: Props) {
   return (
     <div className="flex flex-wrap gap-6 justify-center mt-14 mb-14">
       {posts.map((post) => (
-        <div>
+        <div key={post._id}>
           <div
             key={post._id}
             className="relative w-[550px] md:w-[600px] h-[510px] bg-[rgba(82,_82,_82,_0.80)] rounded-[10px] p-[20px]"

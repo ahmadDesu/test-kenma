@@ -22,14 +22,12 @@ type PropsSlugs = {
   params: {
     slug: string;
   };
-  children: string;
-  onClick: () => {};
 };
 
 export const revalidate = 100;
 
 function Html(props: PropsSlugs) {
-  const { params, children, onClick } = props;
+  const { params } = props;
   const { slug } = params;
   const [slugs, setSlugs] = useState<Html | null>(null);
   const [posts, setPosts] = useState([]);

@@ -29,7 +29,7 @@ function TemplateData({ templates }: Props) {
   return (
     <div className="mx-[50px] flex flex-wrap gap-6 mt-14 mb-14">
       {templates.map((template) => (
-        <div>
+        <div key={template._id}>
           {/* <!-- recent updated --> */}
           <section>
             {/* <!-- card template --> */}
@@ -55,7 +55,10 @@ function TemplateData({ templates }: Props) {
                     </h1>
                     <div className="absolute bottom-0">
                       {template.categories.map((category) => (
-                        <p className="text-[#00C7A3] font-normal text-lg mt-3">
+                        <p
+                          key={category._id}
+                          className="text-[#00C7A3] font-normal text-lg mt-3"
+                        >
                           #{category.title}
                         </p>
                       ))}

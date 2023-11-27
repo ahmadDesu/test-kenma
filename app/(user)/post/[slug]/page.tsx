@@ -90,7 +90,10 @@ async function Post({ params: { slug } }: Props) {
           </div>
           <p className="font-semibold text-md md:text-[36px] text-white">
             {post.categories.map((category) => (
-              <span className="bg-[#f7ab0a] text-center text-black px-3 py-1 rounded-full text-sm font-semibold mr-2">
+              <span
+                key={category._id}
+                className="bg-[#f7ab0a] text-center text-black px-3 py-1 rounded-full text-sm font-semibold mr-2"
+              >
                 {category.title}
               </span>
             ))}
