@@ -8,6 +8,7 @@ import Link from "next/link";
 import BlogData from "@/components/BlogData";
 import Navbar from "@/components/Navbar";
 import AlertButton from "@/app/(user)/html/[slug]/page";
+import Footer from "@/components/Footer";
 
 const query = groq`
 *[_type == 'post'] {
@@ -19,7 +20,7 @@ const query = groq`
 
 export const revalidate = 0;
 
-function blog() {
+function Blog() {
   const [posts, setPosts] = useState([]);
 
   const handleClick = () => {
@@ -108,64 +109,10 @@ function blog() {
           </div>
         </section>
 
-        <footer className="w-full h-fit flex flex-col justify-center bg-[rgba(82,82,82,.80)] p-5 md:px-[60px] mt-14 md:mt-[230px]">
-          <div className="flex justify-between flex-wrap">
-            <div className="md:w-[290px] flex md:block gap-3 mb-5">
-              <img
-                src="../img/course_icon.svg"
-                alt="course icon"
-                className="md:mb-[28px]"
-              />
-              <div className="">
-                <h1 className="font-semibold text-[#ADADAD] text-[18px] md:mb-[22px]">
-                  Free Course
-                </h1>
-                <p className="font-light text-white text-sm md:text[16px]">
-                  Belajar Banyak Bahasa Pemrograman Dengan Gratis.
-                </p>
-              </div>
-            </div>
-            <div className="md:w-[290px] flex md:block gap-3 mb-5">
-              <img
-                src="../img/template_icon.svg"
-                alt="template icon"
-                className="mb-[28px]"
-              />
-              <div>
-                <h1 className="font-semibold text-[#ADADAD] text-[18px] md:mb-[22px]">
-                  Build Easily With Template
-                </h1>
-                <p className="font-light text-white text-sm md:text-[16px]">
-                  Membuat website menjadi semakin mudah dengan template yang
-                  siap pakai.
-                </p>
-              </div>
-            </div>
-            <div className="md:w-[290px] flex md:block gap-3 mb-5">
-              <img
-                src="../img/article_icon.svg"
-                alt="article icon"
-                className="mb-[28px]"
-              />
-              <div>
-                <h1 className="font-semibold text-[#ADADAD] text-[18px] md:mb-[22px]">
-                  Lot's of Article
-                </h1>
-                <p className="font-light text-white text-sm md:text-[16px]">
-                  Mencari info terbaru dengan membaca artikel yang tersedia
-                  secara gratis.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-3 md:mt-[50px] font-semibold text-xl text-[#ADADAD]">
-            KenmaDev
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
 }
 
-export default blog;
+export default Blog;

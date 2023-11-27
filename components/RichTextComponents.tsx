@@ -44,7 +44,7 @@ export const RichTextComponents = {
     //   return <Refractor language={value.language} value={value.code} className="bg-blue-900 rounded-sm p-5 text-yellow-500"/>;
     // },
 
-    myCodeField: ({ value }: any) => {
+    MyCodeField: ({ value }: any) => {
       const [copy, setCopy] = useState(false);
       //const codeText = "h1 hello";
 

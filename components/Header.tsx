@@ -16,19 +16,19 @@ function Header() {
               </Link>
             </li>
             <li className="text-white font-light text-[20px]">
-              <a href="/blog" className="nav-link">
+              <Link href="/blog" className="nav-link">
                 Blog
-              </a>
+              </Link>
             </li>
             <li className="text-white font-light text-[20px]">
-              <a href="/template" className="nav-link">
+              <Link href="/template" className="nav-link">
                 Template
-              </a>
+              </Link>
             </li>
             <li className="text-white font-light text-[20px]">
-              <a href="/course" className="nav-link">
+              <Link href="/course" className="nav-link">
                 Course
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

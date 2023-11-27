@@ -8,6 +8,7 @@ import Image from "next/image";
 import urlFor from "@/lib/urlFor";
 import category from "@/app/(admin)/sanity/schemas/category";
 import ClientSideRoute from "@/components/ClientSideRoute";
+import Footer from "@/components/Footer";
 
 const query = groq`
 *[_type == 'template'] {
@@ -70,7 +71,7 @@ function TemplateData({ templates }: Props) {
   );
 }
 
-function template() {
+function Template() {
   const [templates, setTemplates] = useState([]);
 
   const websiteCategoryTotal = getCategoryTotal(templates, "website");
@@ -135,7 +136,7 @@ function template() {
                 Find your favourite template to use on your project.
               </p>
             </div>
-            <div className="flex gap-[26px]">
+            <div key={websiteCategoryTotal} className="flex gap-[26px]">
               <div className="w-[236px] h-[88px] rounded-[10px] border-solid border-[0.8px] border-[#72E3CF] bg-[rgba(82,_82,_82,_0.80)] text-white px-[22px] flex flex-col justify-center">
                 <h4 className="font-medium text-[20px] mb-[9px]">Web Design</h4>
                 <p className="font-light text-[20px] mb-0">
@@ -172,61 +173,7 @@ function template() {
           </div>
         </section>
 
-        <footer className="w-full h-fit flex flex-col justify-center bg-[rgba(82,82,82,.80)] p-5 md:px-[60px] mt-14 md:mt-[230px]">
-          <div className="flex justify-between flex-wrap">
-            <div className="md:w-[290px] flex md:block gap-3 mb-5">
-              <img
-                src="../img/course_icon.svg"
-                alt="course icon"
-                className="md:mb-[28px]"
-              />
-              <div className="">
-                <h1 className="font-semibold text-[#ADADAD] text-[18px] md:mb-[22px]">
-                  Free Course
-                </h1>
-                <p className="font-light text-white text-sm md:text[16px]">
-                  Belajar Banyak Bahasa Pemrograman Dengan Gratis.
-                </p>
-              </div>
-            </div>
-            <div className="md:w-[290px] flex md:block gap-3 mb-5">
-              <img
-                src="../img/template_icon.svg"
-                alt="template icon"
-                className="mb-[28px]"
-              />
-              <div>
-                <h1 className="font-semibold text-[#ADADAD] text-[18px] md:mb-[22px]">
-                  Build Easily With Template
-                </h1>
-                <p className="font-light text-white text-sm md:text-[16px]">
-                  Membuat website menjadi semakin mudah dengan template yang
-                  siap pakai.
-                </p>
-              </div>
-            </div>
-            <div className="md:w-[290px] flex md:block gap-3 mb-5">
-              <img
-                src="../img/article_icon.svg"
-                alt="article icon"
-                className="mb-[28px]"
-              />
-              <div>
-                <h1 className="font-semibold text-[#ADADAD] text-[18px] md:mb-[22px]">
-                  Lot's of Article
-                </h1>
-                <p className="font-light text-white text-sm md:text-[16px]">
-                  Mencari info terbaru dengan membaca artikel yang tersedia
-                  secara gratis.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-3 md:mt-[50px] font-semibold text-xl text-[#ADADAD]">
-            KenmaDev
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
@@ -239,4 +186,4 @@ function getCategoryTotal(templates: Template[], category: string) {
   return categoryTemplates.length;
 }
 
-export default template;
+export default Template;

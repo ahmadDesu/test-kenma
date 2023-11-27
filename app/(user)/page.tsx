@@ -5,6 +5,7 @@ import thumbnailBlog from "public/image/thumbnail__blog.jpg";
 import courseIcon from "public/image/course_icon.svg";
 import templateIcon from "public/image/template_icon.svg";
 import articleIcon from "public/image/article_icon.svg";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   return (
@@ -25,7 +26,7 @@ export default function HomePage() {
                 <h1 className="text-white text-xl lg:text-[40px] font-bold">
                   Learn <span className="text-[#00C7A3]">More Course</span> Here
                 </h1>
-                <p className="text-white text-sm lg:text-xl font-light text-center">
+                <p className="text-white text-sm lg:text-xl font-light text-center mt-7">
                   Learn from basic to learn programming step by step with
                   explainer easier
                 </p>
@@ -38,7 +39,7 @@ export default function HomePage() {
                     <h1 className="text-[#00C7A3] lg:text-[32px] text-xl font-bold lg:font-bold">
                       HTML
                     </h1>
-                    <p className="text-white text-sm lg:text-xl font-light">
+                    <p className="text-white text-sm lg:text-xl font-light mt-3">
                       Learn html to create website from scracth
                     </p>
                   </div>
@@ -47,7 +48,7 @@ export default function HomePage() {
                     <h1 className="text-[#00C7A3] lg:text-[32px] text-xl font-bold lg:font-bold">
                       CSS
                     </h1>
-                    <p className="text-white text-sm lg:text-xl font-light">
+                    <p className="text-white text-sm lg:text-xl font-light mt-3">
                       Make your website more beautiful with css
                     </p>
                   </div>
@@ -56,17 +57,17 @@ export default function HomePage() {
                     <h1 className="text-[#00C7A3] lg:text-[32px] text-xl font-bold lg:font-bold">
                       JAVASCRIPT
                     </h1>
-                    <p className="text-white text-sm lg:text-xl font-light">
+                    <p className="text-white text-sm lg:text-xl font-light mt-3">
                       Website more interactive with javascript
                     </p>
                   </div>
                 </div>
                 <div className="px-4 w-full lg:w-[1078px] bg-[rgba(217,_217,_217,_0.20)] lg:px-[38px] py-[14px] mt-3 lg:mt-[43px] mb-[14px] text-center rounded-[10px]">
-                  <h1 className="text-white font-bold text-lg lg:text-[32px] mb-[12px]">
+                  <h1 className="text-white font-bold text-lg lg:text-[32px]">
                     And <span className="text-[#00C7A3]">More Language</span>{" "}
                     Avaible
                   </h1>
-                  <p className="text-white text-sm lg:text-xl font-light">
+                  <p className="text-white text-sm lg:text-xl font-light mt-7">
                     We learn here more than three language. Learn from basic
                     language to expert with step by step and give you study
                     cases to learn from real project.
@@ -98,7 +99,7 @@ export default function HomePage() {
           <section>
             <div className="mt-[31px] lg:mt-[62px] flex flex-col items-center mb-[66px]">
               <div className="text-center">
-                <div className="text-white text-lg lg:text-[32px] font-medium bg-[linear-gradient(90deg,_rgba(149,_206,_196,_0.45)_0%,_rgba(217,_217,_217,_0.00)_100%)] py-[10px] lg:px-[70px] lg:py-[14px] rounded-[10px] mb-[24px]">
+                <div className="text-white text-lg lg:text-[32px] font-medium bg-[linear-gradient(90deg,_rgba(149,_206,_196,_0.45)_0%,_rgba(217,_217,_217,_0.00)_100%)] py-[10px] lg:px-[70px] lg:py-[14px] rounded-[10px] mb-7">
                   Premium <span className="text-[#00C7A3]">Template</span>
                 </div>
                 <p className="text-white text-[20px] w-[300px] font-light lg:w-[601px] mb-[52px]">
@@ -108,10 +109,12 @@ export default function HomePage() {
 
               <div className="justify-center flex gap-3 lg:gap-[36px] flex-wrap">
                 <div className="px-[22px] py-[18px] bg-[rgba(82,_82,_82,_0.80)] rounded-[10px] w-[356px] h-[307px]">
-                  <img
-                    src="../img/thumbnail__blog.jpg"
-                    alt="thumbnail"
+                  <Image
+                    src={thumbnailBlog}
+                    alt="thumbnail testing"
                     className="w-full h-full rounded-[8px]"
+                    width={0}
+                    height={0}
                   />
                 </div>
                 <div className="px-[22px] py-[18px] bg-[rgba(82,_82,_82,_0.80)] rounded-[10px] w-[356px] h-[307px]">
@@ -124,10 +127,12 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="px-[22px] py-[18px] bg-[rgba(82,_82,_82,_0.80)] rounded-[10px] w-[356px] h-[307px]">
-                  <img
-                    src="../img/thumbnail__blog.jpg"
-                    alt="thumbnail"
+                  <Image
+                    src={thumbnailBlog}
+                    alt="thumbnail testing"
                     className="w-full h-full rounded-[8px]"
+                    width={0}
+                    height={0}
                   />
                 </div>
               </div>
@@ -155,7 +160,7 @@ export default function HomePage() {
           <section>
             <div className="flex flex-col items-center">
               <div className="text-center text-white mb-[100px]">
-                <h1 className="font-medium text-3xl lg:text-[36px] mb-[13px]">
+                <h1 className="font-medium text-3xl lg:text-[36px] mb-7">
                   Share Our <span className="text-[#EA0F0F]">Error Case</span>{" "}
                   on Our Blog
                 </h1>
@@ -206,7 +211,7 @@ export default function HomePage() {
                     </div>
 
                     <div>
-                      <p className="text-white">#javascript</p>
+                      <p className="text-white">&#x266F;javascript</p>
                     </div>
                   </div>
                 </div>
@@ -217,69 +222,12 @@ export default function HomePage() {
           <section>
             <div className="flex justify-center mt-14 lg:mt-[200px]">
               <p className="text-white text-2xl font-semibold">
-                #Make<span className="text-[#0DCFAC]">Easier</span>
+                &#x266F;Make<span className="text-[#0DCFAC]">Easier</span>
               </p>
             </div>
           </section>
         </div>
-        <footer className="w-full h-fit flex flex-col justify-center bg-[rgba(82,82,82,.80)] p-5 lg:px-[60px] mt-14 lg:mt-[230px]">
-          <div className="flex justify-between flex-wrap">
-            <div className="lg:w-[290px] flex lg:block gap-3 mb-5">
-              <Image
-                src={courseIcon}
-                alt="course icon"
-                width={35}
-                height={35}
-              />
-              <div className="">
-                <h1 className="font-semibold text-[#ADADAD] text-[18px] lg:mb-[22px]">
-                  Free Course
-                </h1>
-                <p className="font-light text-white text-sm lg:text[16px]">
-                  Belajar Banyak Bahasa Pemrograman Dengan Gratis.
-                </p>
-              </div>
-            </div>
-            <div className="lg:w-[290px] flex lg:block gap-3 mb-5">
-              <Image
-                src={templateIcon}
-                alt="template icon"
-                width={35}
-                height={35}
-              />
-              <div>
-                <h1 className="font-semibold text-[#ADADAD] text-[18px] lg:mb-[22px]">
-                  Build Easily With Template
-                </h1>
-                <p className="font-light text-white text-sm lg:text-[16px]">
-                  Membuat website menjadi semakin mudah dengan template yang
-                  siap pakai.
-                </p>
-              </div>
-            </div>
-            <div className="lg:w-[290px] flex lg:block gap-3 mb-5">
-              <Image
-                src={articleIcon}
-                alt="article icon"
-                width={35}
-                height={35}
-              />
-              <div>
-                <h1 className="font-semibold text-[#ADADAD] text-[18px] lg:mb-[22px]">
-                  Lot's of Article
-                </h1>
-                <p className="font-light text-white text-sm lg:text-[16px]">
-                  Mencari info terbaru dengan membaca artikel yang tersedia
-                  secara gratis.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-3 lg:mt-[50px] font-semibold text-xl text-[#ADADAD]">
-            KenmaDev
-          </div>
-        </footer>
+        <Footer />
       </div>
     </>
   );
