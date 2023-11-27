@@ -73,7 +73,10 @@ function BlogData({ posts }: Props) {
               </ClientSideRoute>
               <div className="flex gap-2">
                 {post.categories.map((category) => (
-                  <div className="bg-[#f7ab0a] text-center text-black px-3 py-1 rounded-full text-sm font-semibold">
+                  <div
+                    key={category.title}
+                    className="bg-[#f7ab0a] text-center text-black px-3 py-1 rounded-full text-sm font-semibold"
+                  >
                     <p>{category.title}</p>
                   </div>
                 ))}

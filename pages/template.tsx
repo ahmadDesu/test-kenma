@@ -9,6 +9,7 @@ import urlFor from "@/lib/urlFor";
 import category from "@/app/(admin)/sanity/schemas/category";
 import ClientSideRoute from "@/components/ClientSideRoute";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 const query = groq`
 *[_type == 'template'] {
@@ -38,7 +39,7 @@ function TemplateData({ templates }: Props) {
             >
               <div>
                 {/* <!-- card template list --> */}
-                <a href="templateDetail.html" className="p-0 m-0">
+                <Link href="templateDetail.html" className="p-0 m-0">
                   <div className="relative w-full md:w-[380px] h-[580px] md:h-[430px] bg-[rgba(82,_82,_82,_0.80)] rounded-[10px] p-[20px]">
                     <Image
                       className="w-full h-[263px] rounded-[8px] object-cover"
@@ -60,7 +61,7 @@ function TemplateData({ templates }: Props) {
                       ))}
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             </ClientSideRoute>
             {/* <!-- end of card template--> */}

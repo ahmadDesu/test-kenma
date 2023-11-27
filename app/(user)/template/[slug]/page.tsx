@@ -53,7 +53,7 @@ async function Template({ params: { slug } }: Props) {
 
       {/* <!-- detail content --> */}
       <section>
-        <div className="px-5 md:px-[100px]">
+        <div key={template._id} className="px-5 md:px-[100px]">
           <div className="text-white mb-[46px]">
             <h1 className="font-medium text-3xl md:text-[40px] mb-5">
               {template.title}
@@ -62,7 +62,9 @@ async function Template({ params: { slug } }: Props) {
             <p className="font-light text-[20px]">
               Category by{" "}
               {template.categories.map((category) => (
-                <span className="text-[#00C7A3]">#{category.title}</span>
+                <div key={category._id}>
+                  <span className="text-[#00C7A3]">#{category.title}</span>
+                </div>
               ))}
             </p>
           </div>
