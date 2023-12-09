@@ -12,16 +12,14 @@ type Props = {
 };
 
 function Sidebar({ htmls }: Props) {
-  const router = useRouter();
   return (
     <div className="bg-red-500 w-1/5">
       {htmls.map((html) => (
-        <li
-          key={html.slug.current}
-          onClick={() => router.push(`${`/html/${html.slug.current}`}`)}
-        >
-          {html.title}
-        </li>
+        <div>
+          <ClientSideRoute route={`${`/html/${html.slug.current}`}`}>
+            <li key={html.slug.current}>{html.title}</li>
+          </ClientSideRoute>
+        </div>
       ))}
     </div>
   );

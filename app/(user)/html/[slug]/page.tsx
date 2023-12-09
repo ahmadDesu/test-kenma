@@ -33,23 +33,18 @@ function Html(props: PropsSlugs) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const fetchedPosts = await client.fetch(query, {
-          next: { revalidate },
-        });
-        setPosts(fetchedPosts);
-      } catch (error) {
-        console.error("Error fetching posts:", error);
-      }
-    };
-
+    async function fetchData() {
+      const fetchedPosts = await client.fetch(query, {
+        next: { revalidate },
+      });
+      setPosts(fetchedPosts);
+    }
     fetchData();
-  }, [revalidate]);
-
-  useEffect(() => {
-    const fetchHtmlData = async () => {
-      const htmlQuery = groq`
+    console.log(posts);
+  }, []),
+    useEffect(() => {
+      async function fetchHtmlData() {
+        const htmlQuery = groq`
       *[_type == 'html' && slug.current == $slug][0]{
         ...,
         author->,
@@ -57,17 +52,16 @@ function Html(props: PropsSlugs) {
       }
     `;
 
-      try {
-        const result: Html = await client.fetch(htmlQuery, { slug });
-        setSlugs(result);
-        console.log(result);
-      } catch (error) {
-        console.error("Error fetching post:", error);
+        try {
+          const result: Html = await client.fetch(htmlQuery, { slug });
+          setSlugs(result);
+        } catch (error) {
+          console.error("Error fetching post:", error);
+        }
       }
-    };
 
-    fetchHtmlData();
-  }, [slug]);
+      fetchHtmlData();
+    }, []);
 
   return (
     <div className="mt-[70px] flex gap-0">
