@@ -5,7 +5,6 @@ import { groq } from "next-sanity";
 import React, { useEffect, useState } from "react";
 import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "@/components/RichTextComponents";
-import Sidebar from "@/components/Sidebar";
 import Alert from "@/components/Alert";
 import dynamic from "next/dynamic";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
@@ -65,7 +64,6 @@ function Html(props: PropsSlugs) {
 
   return (
     <div className="mt-[70px] flex gap-0">
-      <Sidebar htmls={posts} />
       <div className="text-white w-100% md:w-[70%] p-[20px] ml-0 bg-blue-400">
         {/* Menampilkan detail konten disini */}
         <div>{slugs?.title}</div>
