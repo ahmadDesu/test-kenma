@@ -63,8 +63,8 @@ function Html(props: PropsSlugs) {
     }, []);
 
   return (
-    <div className="mt-[70px] flex gap-0">
-      <div className="text-white w-100% md:w-[70%] p-[20px] ml-0 bg-blue-400">
+    <div className="flex gap-0">
+      <div className="text-white">
         {/* Menampilkan detail konten disini */}
         <div>{slugs?.title}</div>
         <PortableText
