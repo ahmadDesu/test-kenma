@@ -15,7 +15,7 @@ const query = groq`
 } | order(_createdAt asc)
 `;
 
-export const revalidate = 0;
+export const revalidate = 100;
 
 export default function PageLayout({
   children,
