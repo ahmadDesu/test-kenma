@@ -26,51 +26,61 @@ type PropsSlugs = {
 
 export const revalidate = 100;
 
-function Html(props: PropsSlugs) {
-  const { params } = props;
-  const { slug } = params;
-  const [slugs, setSlugs] = useState<Html | null>(null);
-  const [posts, setPosts] = useState([]);
+async function Html({ params: { slug } }: PropsSlugs) {
+  const query = groq`
+*[_type == 'html' && slug.current == $slug][0]{
+    ...,
+    author->,
+    categories[]->,
+  }
+`;
 
-  useEffect(() => {
-    async function fetchData() {
-      const fetchedPosts = await client.fetch(query, {
-        next: { revalidate },
-      });
-      setPosts(fetchedPosts);
-    }
-    fetchData();
-    console.log(posts);
-  }, []),
-    useEffect(() => {
-      async function fetchHtmlData() {
-        const htmlQuery = groq`
-      *[_type == 'html' && slug.current == $slug][0]{
-        ...,
-        author->,
-        categories[]->
-      }
-    `;
+  const post: Post = await client.fetch(query, { slug });
 
-        try {
-          const result: Html = await client.fetch(htmlQuery, { slug });
-          setSlugs(result);
-        } catch (error) {
-          console.error("Error fetching post:", error);
-        }
-      }
+  // const { params } = props;
+  // const { slug } = params;
+  // const [slugs, setSlugs] = useState<Html | null>(null);
+  // const [posts, setPosts] = useState([]);
 
-      fetchHtmlData();
-    }, []);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const fetchedPosts = await client.fetch(query, {
+  //       next: { revalidate },
+  //     });
+  //     setPosts(fetchedPosts);
+  //   }
+  //   fetchData();
+  //   console.log(posts);
+  // }, []),
+  //   useEffect(() => {
+  //     async function fetchHtmlData() {
+  //       const htmlQuery = groq`
+  //     *[_type == 'html' && slug.current == $slug][0]{
+  //       ...,
+  //       author->,
+  //       categories[]->
+  //     }
+  //   `;
+
+  //       try {
+  //         const result: Html = await client.fetch(htmlQuery, { slug });
+  //         setSlugs(result);
+  //       } catch (error) {
+  //         console.error("Error fetching post:", error);
+  //       }
+  //     }
+
+  //     fetchHtmlData();
+  //   }, []);
 
   return (
     <div className="mt-[70px] flex gap-0">
-      <Sidebar htmls={posts} />
+      {/*<Sidebar htmls={posts} />*/}
       <div className="text-white w-100% md:w-[70%] p-[20px] ml-0 bg-blue-400">
         {/* Menampilkan detail konten disini */}
-        <div>{slugs?.title}</div>
+        <div>{post.title}</div>
         <PortableText
-          value={slugs?.body ? slugs.body : []}
+          value={post.body ? post.body : []}
           components={RichTextComponents}
         />
         <Alert>Click Me!</Alert>
