@@ -1,6 +1,5 @@
 "use client";
 
-
 import { client } from "@/lib/client";
 import { groq } from "next-sanity";
 import React, { useState, useEffect } from "react";
@@ -17,9 +16,14 @@ function Sidebar({ htmls }: Props) {
   return (
     <div className="bg-red-500 min-h-screen h-max w-fit px-4 py-5">
       {htmls.map((html) => (
-        <div className="flex flex-col items-start justify-center">
+        <div
+          className="flex flex-col items-start justify-center"
+          key={html._id}
+        >
           <ClientSideRoute route={`${`/html/${html.slug.current}`}`}>
-            <li key={html.slug.current} className="list-none">{html.title}</li>
+            <li key={html.slug.current} className="list-none">
+              {html.title}
+            </li>
           </ClientSideRoute>
         </div>
       ))}

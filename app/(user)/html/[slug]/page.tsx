@@ -24,7 +24,7 @@ type PropsSlugs = {
   };
 };
 
-export const revalidate = 100;
+export const revalidate = 0;
 
 async function Html({ params: { slug } }: PropsSlugs) {
   const query = groq`
