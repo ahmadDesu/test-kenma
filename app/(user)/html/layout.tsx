@@ -8,6 +8,7 @@ import React, {
 
 import {groq} from "next-sanity";
 import { client } from "@/lib/client";
+import {intersection} from "ts-interface-checker";
 
 const query = groq`
 *[_type == 'html'] {
@@ -38,9 +39,11 @@ export default function PageLayout({children}: {
     }, [])
 
     return (
-        <nav>
+        <section className="flex justify-start items-start gap-10">
             <Sidebar htmls={posts}/>
-            {children}
-        </nav>
+            <section className="w-full min-h-screen bg-blue-400 px-4 py-5">
+                {children}
+            </section>
+        </section>
     )
 }
